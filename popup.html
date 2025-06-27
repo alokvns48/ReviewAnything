@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Anything</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>⭐ Review Anything</h1>
+            <div class="user-display">
+                <span id="currentUsername" class="username-display"></span>
+                <button id="refreshUsername" class="refresh-btn" title="Generate new username">🔄</button>
+            </div>
+        </header>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent" class="main-content" style="display: none;">
+            <!-- Tab Navigation -->
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="reviews">
+                    ⭐ Reviews
+                </button>
+                <button class="tab-btn" data-tab="chat">
+                    💬 Chat
+                </button>
+            </nav>
+
+            <!-- Reviews Tab -->
+            <div id="reviewsTab" class="tab-content active">
+                <div class="reviews-header">
+                    <h3>Reviews for this page</h3>
+                    <div class="rating-summary">
+                        <div class="average-rating">
+                            <span id="avgRating">0.0</span>
+                            <div class="stars">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <span id="reviewCount">(0 reviews)</span>
+                    </div>
+                </div>
+
+                <!-- Review Form -->
+                <div class="review-form" id="reviewForm">
+                    <h4>Write a Review</h4>
+                    <div class="rating-input">
+                        <label>Rating:</label>
+                        <div class="star-rating">
+                            <span class="star" data-rating="1">☆</span>
+                            <span class="star" data-rating="2">☆</span>
+                            <span class="star" data-rating="3">☆</span>
+                            <span class="star" data-rating="4">☆</span>
+                            <span class="star" data-rating="5">☆</span>
+                        </div>
+                    </div>
+                    <textarea id="reviewComment" placeholder="Share your thoughts about this page..." maxlength="1000"></textarea>
+                    <div class="char-count">
+                        <span id="charCount">0</span>/1000
+                    </div>
+                    <button id="submitReview" class="btn btn-primary">
+                        📤 Submit Review
+                    </button>
+                </div>
+
+                <!-- Reviews List -->
+                <div class="reviews-list" id="reviewsList">
+                    <!-- Reviews will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <!-- Chat Tab -->
+            <div id="chatTab" class="tab-content">
+                <div class="chat-header">
+                    <h3>Live Chat</h3>
+                    <span id="onlineUsers">0 online</span>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically loaded here -->
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input">
+                    <textarea id="chatMessage" placeholder="Type your message..." maxlength="500"></textarea>
+                    <div class="chat-controls">
+                        <div class="char-count">
+                            <span id="chatCharCount">0</span>/500
+                        </div>
+                        <button id="sendMessage" class="btn btn-primary">
+                            📤 Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="error-state" style="display: none;">
+            ⚠️
+            <p id="errorMessage">Something went wrong. Please try again.</p>
+            <div class="error-buttons">
+                <button id="backBtn" class="btn btn-secondary">← Back</button>
+                <button id="retryBtn" class="btn btn-primary">Retry</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="firebase-app.js"></script>
+    <script src="firebase-firestore.js"></script>
+    <script src="firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html> 

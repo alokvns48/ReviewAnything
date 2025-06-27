@@ -1,0 +1,19 @@
+/* Content Script CSS for Review Anything Extension */
+
+/* This file contains styles that will be injected into web pages */
+/* Currently empty - can be used for future widget styling */
+
+/* Example: Styles for a review widget that could be injected */
+/*
+.review-anything-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+*/ 
