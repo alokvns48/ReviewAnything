@@ -10,7 +10,7 @@ Review Anything adds a lightweight, anonymous layer of interaction to any websit
 **Review Anything** is a Chrome Extension that allows users to:
 - 📝 Leave public reviews on any webpage
 - 💬 Chat in real-time with others who are viewing the same page
-- 🔐 Do it all anonymously — no sign-up, no account needed!
+- 🔐 Do it all anonymously — no sign-up, no account needed
 
 This extension brings community and conversation directly to the content — right where it happens.
 
